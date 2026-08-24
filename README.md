@@ -20,4 +20,5 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 13] Debugging: How to Find and Fix Errors in your Code
 -   [Day 14] Higher Lower Game
 -   [Day 15] Local Development Environment Setup & the Coffee Machine
-
+-   [Day 16] Object Oriented Programming (OOP)
+-   [Day 17] – Intermediate – The Quiz Project & the Benefits of OOP
