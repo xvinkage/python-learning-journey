@@ -28,3 +28,5 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 21] Build the Snake Game Part 2: Inheritance & List Slicing
 
 -   [Day 22] Build Pong: The Famous Arcade Game
+-   [Day 23] The Turtle Crossing Capstone Project
+
