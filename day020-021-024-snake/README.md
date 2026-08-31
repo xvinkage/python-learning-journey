@@ -1,4 +1,5 @@
-# Day  – Intermediate – Build the Snake Game Part 2: Inheritance & List Slicing
+# Day 021  – Intermediate – Build the Snake Game Part 2: Inheritance & List Slicing
+# Day 024  – Files, Directories and Paths 
 
 ## 📚 Today's Concepts
 
@@ -6,6 +7,7 @@
 - Using `super().__init__()`
 - List slicing
 - Working with objects and inherited methods
+- Using python read, write and close files
 
 ---
 
@@ -30,6 +32,7 @@
 - Slicing uses indexes to select the elements you want.
 - `snake.snake_body[1:]` gets everything in the list starting at index `1`, which allowed me to check the snake's body without checking the head against itself.
 - Methods should handle the behavior of the object they belong to.
+- absolute vs relative file paths
 
 ---
 
@@ -44,3 +47,6 @@
 - `list[1:]` means start at index `1` and take everything after it.
 - Be careful when creating new objects because they start with their default values/positions.
 - Keep related data and behavior together inside their class when possible.
+-DONT FORGET TO CLOSE FILES THAT YOU OPEN file.close()
+- use with keyword to open files and itll close automatically when done, its the equivalent of loop through a file ```with open("file.txt) as file:
+- by default files are read only when opened unless specified

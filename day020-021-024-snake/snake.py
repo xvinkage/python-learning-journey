@@ -53,5 +53,17 @@ class Snake:
         if self.head.heading() != 0:
             self.head.setheading(180)
 
+    def reset(self):
+        # Move all current segments off screen
+        for segment in self.snake_body:
+            segment.goto(1000, 1000)
 
+        self.snake_body.clear()
 
+        # Reset the existing head
+        self.head.goto(0, 0)
+        self.head.setheading(0)
+
+        # Put the head back in the list
+        self.snake_body.append(self.head)
+        self.create_body()
