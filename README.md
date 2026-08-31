@@ -29,4 +29,5 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 
 -   [Day 22] Build Pong: The Famous Arcade Game
 -   [Day 23] The Turtle Crossing Capstone Project
+-   [Day 24] Files, Directories and Paths 
 
