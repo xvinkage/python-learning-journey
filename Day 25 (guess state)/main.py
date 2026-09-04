@@ -22,12 +22,12 @@ while len(guessed_states) < 50:
     answer_state = screen.textinput(title=f"Guess the state {num_correct}/{num_states}", prompt="What's a state's name?").title()
 
     if answer_state == "Exit":
-        states_to_learn = []
+        states_to_learn = [states for states in df["state"].tolist() if states not in guessed_states]
+        # states_to_learn = []
 
-        for states in df["state"].tolist():
-            if states not in guessed_states:
-                states_to_learn.append(states)
-
+        # for states in df["state"].tolist():
+        #     if states not in guessed_states:
+        #         states_to_learn.append(states)
         data_frame = pd.DataFrame(states_to_learn, columns=["states"])
         data_frame.to_csv("states_to_learn.csv", index=False)
         break
