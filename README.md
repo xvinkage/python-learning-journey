@@ -32,4 +32,5 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 24] Files, Directories and Paths 
 -   [Day 25] Working with CSV Data and the Pandas Library
 -   [Day 26] List Comprehension and the NATO Alphabet
+-   [Day 27] Graphical User Interfaces with Tkinter and Function Arguments
 
