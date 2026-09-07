@@ -34,4 +34,4 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 26] List Comprehension and the NATO Alphabet
 -   [Day 27] Graphical User Interfaces with Tkinter and Function Arguments
 -   [Day 28] Tkinter, Dynamic Typing and Pomodoro GUI app 
-
+-   [Day29] Building a Password Manager GUI App with Tkinter
