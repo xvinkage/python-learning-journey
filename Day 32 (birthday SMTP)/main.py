@@ -24,9 +24,9 @@ def birthday():
             if now_day == birthday["day"]:
                 print("found")
                 number = random.randint(1, 3)
-                letter_file = f"letter_templates/letter_{number}.txt"
+                letter_path = f"letter_templates/letter_{number}.txt"
 
-                with open(letter_file) as file:
+                with open(letter_path) as file:
                     birthday_letter = file.read()
                     updated_letter = birthday_letter.replace("[NAME]", birthday["name"])
 
