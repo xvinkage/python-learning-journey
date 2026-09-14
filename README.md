@@ -38,4 +38,9 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 30] Errors, Exceptions and JSON Data
 -   [Day 31] Flash Card App Capstone Project
 -   [Day 32] Email SMTP and the datetime module
+-   [Day 33] API Endpoints & API Parameters- ISS Overhead Notifier
+-   [Day 34] API Practice, Creating a GUI Quiz App
+-   [Day 35] API Keys, Authenication, Environment Variables and Sending SMS
+
+
 
