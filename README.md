@@ -43,6 +43,7 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 35] API Keys, Authenication, Environment Variables and Sending SMS
 -   [Day 36] Stock Trading News Alert Project
 -   [Day 37] Tracking Project: API Post Requests & Headers
+-   [Day 38] Excercise Tracking with Python and Google Sheets
 
 
 
