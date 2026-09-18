@@ -41,6 +41,8 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 33] API Endpoints & API Parameters- ISS Overhead Notifier
 -   [Day 34] API Practice, Creating a GUI Quiz App
 -   [Day 35] API Keys, Authenication, Environment Variables and Sending SMS
+-   [Day 36] Stock Trading News Alert Project
+-   [Day 37] Tracking Project: API Post Requests & Headers
 
 
 
