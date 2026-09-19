@@ -28,14 +28,14 @@ today = datetime.date.today().strftime("%d/%m/%Y")
 time = datetime.datetime.now().time().strftime("%H:%M:%S")
 
 url = SHEETY
-data_json = {"workout": {
-                 "date": today,
-                 "time": time,
-                 "duration": result["exercises"][0]["duration_min"],
-                 "exercise": result["exercises"][0]["name"].title(),
-                 "calories": result["exercises"][0]["nf_calories"]
-                 }
-                 }
+data_json = {
+    "workout": {
+        "date": today,
+        "time": time,
+        "duration": result["exercises"][0]["duration_min"],
+        "exercise": result["exercises"][0]["name"].title(),
+        "calories": result["exercises"][0]["nf_calories"]
+        }}
 
 bearer_headers = {"Authorization": AUTH}
 
