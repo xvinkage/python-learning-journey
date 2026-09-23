@@ -45,6 +45,8 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 37] Tracking Project: API Post Requests & Headers
 -   [Day 38] Excercise Tracking with Python and Google Sheets
 -   [Day 39] Capstone Cheap Flight Finder
--   [Day 40] Capstone Part 2: Flight Club
+-   [Day 40] Capstone Part 2: Flight Club (skipped)
+-   [Day 41] Web Foundation- Introduction to HTML
+
 
 
