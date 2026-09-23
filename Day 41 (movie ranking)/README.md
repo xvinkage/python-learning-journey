@@ -1,37 +1,42 @@
-# Day 41 – Intermediate – Web Foundation- Introduction to HTML
+# Day 41 – Intermediate – Web Foundation – Introduction to HTML
 
 ## 📚 Today's Concepts
-- HTML
--Tags <h1>Heading Element h1 - h6</h1> <p>this is a paragraph </p>
+
+- HTML — HyperText Markup Language
+- HTML tags are used to mark up and structure content.
+- Heading elements: `<h1>` through `<h6>`
+- Paragraph elements: `<p>...</p>`
+- Void elements — elements that don't contain content and don't require a closing tag.
 
 ---
 
 ## 🛠️ What I Built
-- Project or exercise
-- Feature I implemented
-- Problem I solved
-- the <br/> tag adds a new line
+
+- Created a simple HTML webpage ranking my top 3 anime.
+- Used heading elements `<h1>`, `<h2>`, and `<h3>` to organize the page.
+- Used `<p>` elements to add descriptions.
+- Used the `<hr>` element to create a horizontal divider.
+- Used the `<br>` element to create a line break.
 
 ---
 
 ## 💡 What I Learned
-- ip address can be used in place of website address. ip is the address too
-- DNS is Domain Name System (phone book of ip address)- Common mistake I discovered
-- HTML is HyperText Markup Language
-- markup is done with HTML tags
-- Lorem Ipsum is used as placeholder or dummy text. It has a normal-looking distribution of letters and word lengths that mimics natural English reading patterns.
 
+- An IP address can be used to access a website in place of its domain name when the server configuration allows it.
+- DNS stands for Domain Name System. It translates domain names into IP addresses, similar to how a phone book connects names to phone numbers.
+- HTML stands for HyperText Markup Language.
+- Markup is created using HTML tags to define the structure and meaning of content.
+- Lorem Ipsum is placeholder or dummy text. It has a distribution of letters and word lengths that resembles natural written text.
 
 ---
 
 ## ⚠️ Things to Remember
-- computer is a client
-- html is responsible for content and structure
-- css are responsible for styling website, the look
-- javascript is responsible for allowing site to do things (behavior) or have functionality
-- DONT HAVE MORE THAN ONE H1!and dont jump from H1 to H3, go in order
-- void element have no content insde the tag and are self closing with a forward slash <br/> or <br> are valid
 
----
-
-
+- The computer requesting information from a website is the client.
+- HTML is responsible for the content and structure of a webpage.
+- CSS is responsible for presentation and styling — how the website looks.
+- JavaScript is responsible for behavior and functionality — allowing the website to respond to actions and perform tasks.
+- A page should generally have one main `<h1>` heading.
+- Don't skip heading levels without a structural reason; organize headings logically (`<h1>` → `<h2>` → `<h3>`).
+- Void elements don't contain content and don't have a closing tag. For example, `<br>` and `<hr>`.
+- In HTML5, `<br>` and `<br />` are both valid, although `<br>` is the conventional HTML5 form.
