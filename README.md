@@ -48,7 +48,7 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 40] Capstone Part 2: Flight Club (skipped)
 -   [Day 41] Web Foundation- Introduction to HTML
 -   [Day 42] Web Foundation- Intermediate HTML
-
+-   [Day 43] Web Foundation- Introduction to CSS
 
 
 
