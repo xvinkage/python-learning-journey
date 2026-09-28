@@ -26,7 +26,6 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 19] Instances, State and Higher Order Functions 
 -   [Day 20] Build the Snake Game Part 1: Animations & Coordinates
 -   [Day 21] Build the Snake Game Part 2: Inheritance & List Slicing
-
 -   [Day 22] Build Pong: The Famous Arcade Game
 -   [Day 23] The Turtle Crossing Capstone Project
 -   [Day 24] Files, Directories and Paths 
@@ -50,6 +49,8 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 42] Web Foundation- Intermediate HTML
 -   [Day 43] Web Foundation- Introduction to CSS
 -   [Day 44] Web Foundation- Introduction Intermediate CSS
+-   [Day 45] Web Scraping with Beautiful Soup
+
 
 
 
