@@ -50,6 +50,8 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 43] Web Foundation- Introduction to CSS
 -   [Day 44] Web Foundation- Introduction Intermediate CSS
 -   [Day 45] Web Scraping with Beautiful Soup
+-   [Day 46] Create a Spotify Playlist using Musical Time Machine
+
 
 
 
