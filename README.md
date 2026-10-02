@@ -52,6 +52,7 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 45] Web Scraping with Beautiful Soup
 -   [Day 46] Create a Spotify Playlist using Musical Time Machine
 -   [Day 47] Automated Amazon Price Tracker
+-   [Day 48] Selenium Webdriver Browser and Game Playing Bot
 
 
 
