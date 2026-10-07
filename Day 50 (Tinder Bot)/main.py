@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
+from selenium.common.exceptions import ElementClickInterceptedException
 
 load_dotenv()
 
@@ -52,3 +52,20 @@ notification_button.click()
 
 cookies_button = driver.find_element(By.CLASS_NAME, "btn-primary")
 cookies_button.click()
+
+WebDriverWait(driver, timeout=5).until(EC.presence_of_element_located((By.CLASS_NAME, 'btn-like')))
+
+n = 0
+
+while n < 20:
+    try:
+        WebDriverWait(driver, timeout=5).until(EC.presence_of_element_located((By.CLASS_NAME, 'btn-like')))
+        like = driver.find_element(By.CLASS_NAME, "btn-like")
+        like.click()
+        n += 1
+
+    except ElementClickInterceptedException:
+        popup = driver.find_element(By.CLASS_NAME, "match-popup-link")
+        popup.click()
+
+driver.quit()
