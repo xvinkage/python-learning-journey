@@ -55,6 +55,7 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 48] Selenium Webdriver Browser and Game Playing Bot
 -   [Day 49] Automate your workout routine with Selenium
 -   [Day 50] Auto Tinder Swiping Bot
+-   [Day 51] Internet Speed Complaint Bot
 
 
 
