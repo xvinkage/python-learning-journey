@@ -22,9 +22,14 @@ class InternetSpeedTwitterBot:
 
     def get_internet_speed(self):
         self.driver.get(SPEED_URL)
-        button = self.driver.find_element(By.CLASS_NAME, "button")
+        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="root"]/div/div[1]/div/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/button')))
+        button = self.driver.find_element(By.XPATH, '//*[@id="root"]/div/div[1]/div/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/button')
         button.click()
-        
+        self.driver.implicitly_wait(60)
+        self.up = self.driver.find_element(By.XPATH, '//*[@id="root"]/div/div[1]/div/div[2]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[2]/div[1]/div[2]/div/h3')
+        self.down = self.driver.find_element(By.XPATH, '//*[@id="root"]/div/div[1]/div/div[2]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[2]/div[1]/div[1]/div/h3')
+        print(self.up.text, self.down.text)
+
     def tweet_at_provider(self):
         self.driver.get(URL)
 
