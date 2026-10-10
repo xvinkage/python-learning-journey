@@ -98,7 +98,7 @@ class InternetSpeedTwitterBot:
 
 bot = InternetSpeedTwitterBot()
 bot.get_internet_speed()
-if bot.down < PROMISED_DOWN or bot.up < PROMISED_DOWN:
+if int(bot.down.text) < PROMISED_DOWN or int(bot.up.text) < PROMISED_DOWN:
     bot.tweet_at_provider()
 
 
