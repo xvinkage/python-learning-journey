@@ -4,7 +4,8 @@ from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
+# from selenium.webdriver.common.keys import Keys
+import time
 
 load_dotenv()
 
@@ -39,18 +40,33 @@ class InstaFollower():
         #search for similar account
         driver.find_element(By.CSS_SELECTOR, ".naan-rail-item").click()
         driver.find_element(By.CSS_SELECTOR , "input").send_keys(SIMILAR_ACCOUNT)
-        driver.find_element(By.CSS_SELECTOR , "input").send_keys(Keys.ENTER)
-                #followers
 
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".naan-search-row")))
+        driver.find_element(By.CSS_SELECTOR , ".naan-search-row").click()
 
-
-
-    
     def find_followers(self):
-        pass
+        driver = self.driver
+        driver.find_element(By.CSS_SELECTOR, ".naan-followers-link").click()
+
+        #locate the followers list
+        wait = WebDriverWait(driver, 10)
+        modal = self.driver.find_element(By.CSS_SELECTOR, ".followers-scroll")
+        for _ in range(10):
+            # "scroll this element to the bottom" → loads the next batch of followers
+            self.driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", modal)
+            time.sleep(1)
 
     def follow(self):
-        pass
+        driver = self.driver
+        all_buttons = driver.find_elements(By.CSS_SELECTOR, ".followers-scroll button")
+        for button in all_buttons:
+            if button.text == "Follow":
+                time.sleep(1)
+                button.click()
+            else:
+                print("Already following this user.")
+        
+            
 
 insta = InstaFollower()
 
