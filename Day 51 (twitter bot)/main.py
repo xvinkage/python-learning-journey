@@ -6,6 +6,7 @@ import time
 import os
 from dotenv import load_dotenv
 from selenium_stealth import stealth
+import undetected_chromedriver as uc
 
 load_dotenv()
 
@@ -24,16 +25,6 @@ class InternetSpeedTwitterBot:
 
         self.driver = webdriver.Edge(options=options) 
 
-
-        # stealth(
-        #     self.driver,
-        #     languages=["en-US", "en"],
-        #     vendor="Google Inc.",
-        #     platform="Win32",
-        #     webgl_vendor="Intel Inc.",
-        #     renderer="Intel Iris OpenGL Engine",
-        #     fix_hairline=True,
-        # )       
         self.up = 0
         self.down = 0
 
@@ -58,16 +49,18 @@ class InternetSpeedTwitterBot:
 
 
     def tweet_at_provider(self):
-        chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_experimental_option("detach", True)
+        chrome_options = uc.ChromeOptions()
+        # chrome_options.add_experimental_option("detach", True)
         chrome_options.add_argument("--disable-blink-features=AutomationControlled")
 
-        self.driver = webdriver.Chrome(options=chrome_options) 
+        self.driver = uc.Chrome(version_main=154, options=chrome_options) 
         stealth(
             self.driver,
             languages=["en-US", "en"],
             vendor="Google Inc.",
             platform="Win32",
+
+
             webgl_vendor="Intel Inc.",
             renderer="Intel Iris OpenGL Engine",
             fix_hairline=True,
@@ -95,10 +88,9 @@ class InternetSpeedTwitterBot:
         tweet = f"Hey provider why is my internet {self.down.text}down/{self.up.text}up when I pay for {PROMISED_DOWN}down/{PROMISED_UP}up?"
         draft_post.send_keys(tweet)
 
+        #leave browser open on purpose so can manually send tweet
 
 bot = InternetSpeedTwitterBot()
 bot.get_internet_speed()
-if int(bot.down.text) < PROMISED_DOWN or int(bot.up.text) < PROMISED_DOWN:
+if float(bot.down.text) < PROMISED_DOWN or float(bot.up.text) < PROMISED_DOWN:
     bot.tweet_at_provider()
-
-
