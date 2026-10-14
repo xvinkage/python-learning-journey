@@ -59,8 +59,8 @@ for index, price in enumerate(prices):
 
             wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".Qr7Oae input")))
 
-            input_fields[0].send_keys(price)
-            input_fields[1].send_keys(addresses[index])
+            input_fields[1].send_keys(price)
+            input_fields[0].send_keys(addresses[index])
             input_fields[2].send_keys(links[index])
 
             driver.find_element(By.CSS_SELECTOR, ".NPEfkd").click()
