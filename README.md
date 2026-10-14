@@ -58,6 +58,7 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 51] Twitter Internet Speed Complaint Bot
 -   [Day 52] Instagram Follower Bot
 -   [Day 53] Web Scraping Capstone - Data Entry Job Automation
+-   [Day 54] Introduction to Web Development with Flask
 
 
 
