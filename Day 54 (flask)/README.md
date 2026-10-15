@@ -1,7 +1,7 @@
 # Day 54 – Intermediate – Introduction to Web Development with Flask
 
 ## 📚 Today's Concepts
-- Concept 1
+- Flask
 - Concept 2
 - Concept 3
 - Concept 4
@@ -18,13 +18,13 @@
 ## 💡 What I Learned
 - backend is made of 3 components, client, server and database
 - framework is basically a template for backend (django and flask)
-- Common mistake I discovered
-- Better way to solve a problem
+- flask is a web development framework
+-  framework calls upon your code
 
 ---
 
 ## ⚠️ Things to Remember
-- Important syntax
+- set FLASK_APP=NAME.py and then flask run to open flask server
 - Common bugs
 - Python behavior
 - Best practices
