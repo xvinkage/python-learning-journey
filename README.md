@@ -59,6 +59,14 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 52] Instagram Follower Bot
 -   [Day 53] Web Scraping Capstone - Data Entry Job Automation
 -   [Day 54] Introduction to Web Development with Flask
+-   [Day 55] HTML & URL Parsing in Flask and the Higher Lower Game
+-   [Day 56] Rendering HTML/Static files and using website templates
+-   [Day 57] Templating with Jinja in Flask Applications
+-   [Day 58] Web Foundation Boostrap
+
+
+
+
 
 
 
