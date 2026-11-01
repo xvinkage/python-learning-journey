@@ -67,6 +67,7 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 60] Make POST Requests with Flask and HTML Forms
 -   [Day 61] Building Advanced Forms with Flask-WTForms
 -   [Day 62] Flask, WTForms, Bootstrap and CSV - Coffee & Wifi Project
+-   [Day 63] Databases with SQLite and SQLAlchemy
 
 
 
