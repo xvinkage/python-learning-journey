@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, sessionmaker
-from sqlalchemy import Integer, String, Float, create_engine
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+from sqlalchemy import Integer, String, Float
 
 
 
@@ -60,6 +60,16 @@ def edit(id):
 
     return render_template('edit.html', id=id, book=book)
 
+
+@app.route("/delete/<id>", methods=["GET"])
+def delete(id):
+    if request.method == "GET":
+        book_to_delete = db.session.execute(db.select(Book).where(Book.id == id)).scalar()
+        # or book_to_delete = db.get_or_404(Book, book_id)
+        db.session.delete(book_to_delete)
+        db.session.commit()       
+    return redirect(url_for('home'))
+
+
 if __name__ == "__main__":
     app.run(debug=True)
-
