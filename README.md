@@ -19,6 +19,7 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 12] Scope & Number Guessing Game
 -   [Day 13] Debugging: How to Find and Fix Errors in your Code
 -   [Day 14] Higher Lower Game
+## 🔰 Intermediate
 -   [Day 15] Local Development Environment Setup & the Coffee Machine
 -   [Day 16] Object Oriented Programming (OOP)
 -   [Day 17] The Quiz Project & the Benefits of OOP
@@ -36,6 +37,7 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 29] Building a Password Manager GUI App with Tkinter
 -   [Day 30] Errors, Exceptions and JSON Data
 -   [Day 31] Flash Card App Capstone Project
+## 🔰 Intermediate+
 -   [Day 32] Email SMTP and the datetime module
 -   [Day 33] API Endpoints & API Parameters- ISS Overhead Notifier
 -   [Day 34] API Practice, Creating a GUI Quiz App
@@ -63,6 +65,7 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 56] Rendering HTML/Static files and using website templates
 -   [Day 57] Templating with Jinja in Flask Applications
 -   [Day 58] Web Foundation Boostrap
+## 🔰 Advanced
 -   [Day 59] Blog Capstone Project Part 2- Adding Styling
 -   [Day 60] Make POST Requests with Flask and HTML Forms
 -   [Day 61] Building Advanced Forms with Flask-WTForms
