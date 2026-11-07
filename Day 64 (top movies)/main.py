@@ -14,7 +14,8 @@ import os
 load_dotenv()
 API_TOKEN = os.getenv("API_TOKEN")
 URL="https://api.themoviedb.org/3/search/movie"
-URL_DETAIL="https://api.themoviedb.org/3/movie/"
+URL_DETAIL="https://api.themoviedb.org/3/movie"
+IMAGE_URL = "https://image.tmdb.org/t/p/w500"
 headers = {
             "Authorization": API_TOKEN
             }
@@ -38,14 +39,14 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///top-movies.db"
 db.init_app(app)
 
 class Movie(db.Model):
-    id: Mapped[int] = mapped_column(primary_key=True)
-    title: Mapped[str] = mapped_column(unique=True)
-    year: Mapped[int]
-    description: Mapped[str]
-    rating: Mapped[float]
-    ranking: Mapped[int]
-    review: Mapped[str]
-    img_url: Mapped[str]
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    title: Mapped[str] = mapped_column(String(250), unique=True, nullable=False)
+    year: Mapped[int] = mapped_column(Integer, nullable=False)
+    description: Mapped[str] = mapped_column(String(250), nullable=False)
+    rating: Mapped[float] = mapped_column(Float, nullable=True)
+    ranking: Mapped[int] = mapped_column(Integer, nullable=True, autoincrement=True)
+    review: Mapped[str] = mapped_column(String(250), nullable=True)
+    img_url: Mapped[str] = mapped_column(String(250), nullable=False)
 
 
 with app.app_context():
@@ -83,7 +84,12 @@ class RateMovieForm(FlaskForm):
 
 @app.route("/")
 def home():
-    all_movies = db.session.execute(db.select(Movie).order_by(Movie.title)).scalars()
+    all_movies = db.session.execute(db.select(Movie).order_by(Movie.rating.desc())).scalars().all()
+
+    for num in range(len(all_movies)):
+        all_movies[num].ranking = len(all_movies) - num
+    db.session.commit()
+    
     return render_template("index.html", all_movies=all_movies)
 
 @app.route("/edit/<int:id>", methods=["POST", "GET"])
@@ -116,10 +122,6 @@ def add():
     if request.method == "POST" and form.validate_on_submit():
         title = form.title.data
         print(title)
-
-
-    
-
         params = {
             "query":title
         }
@@ -138,8 +140,16 @@ def add():
 def select(id):
     if request.method == "GET":
         response = requests.get(f"{URL_DETAIL}/{id}", headers=headers)
-        print(response.json())
-    return redirect(url_for('home'))
+        movie_details = response.json() #["belongs_to_collection"]
+        title = movie_details["title"]
+        img_url = f"{IMAGE_URL}{movie_details["poster_path"]}"
+        year = movie_details["release_date"]
+        description = movie_details["overview"]
+
+        new_movie = Movie(title=title, year=year, description=description, img_url=img_url)
+        db.session.add(new_movie)
+        db.session.commit()
+    return redirect(url_for('edit', id=new_movie.id))
 
 
 if __name__ == '__main__':
