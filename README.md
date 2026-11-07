@@ -72,6 +72,8 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 62] Flask, WTForms, Bootstrap and CSV - Coffee & Wifi Project
 -   [Day 63] Databases with SQLite and SQLAlchemy
 -   [Day 64] My Top 10 Movies Website
+-   [Day 65] Web Design School- How to Create a Website that People will LOVE
+
 
 
 
