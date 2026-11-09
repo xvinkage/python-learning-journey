@@ -1,5 +1,4 @@
-
-# Day 65 – Intermediate – Web Design School
+# Day 65 – Advanced – Web Design School
 
 ## 📚 Today's Concepts
 - Color Theory
