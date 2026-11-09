@@ -1,4 +1,4 @@
-# Day X – Intermediate – <Lesson Title>
+# Day X – Advanced – <Lesson Title>
 
 ## 📚 Today's Concepts
 - Concept 1
