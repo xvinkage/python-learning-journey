@@ -1,0 +1,9 @@
+$kind: http-request
+url: http://127.0.0.1:5000/search?loc=Peckham
+method: GET
+queryParams:
+  - key: loc
+    value: Peckham
+    disabled: false
+    description: Retrieve cafes by location
+order: 3000
