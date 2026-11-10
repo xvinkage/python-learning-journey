@@ -1,0 +1,9 @@
+$kind: http-request
+url: http://127.0.0.1:5000/report-closed/2
+method: DELETE
+auth:
+  type: apikey
+  credentials:
+    key: api-key
+    value: TopSecretAPIKey
+order: 6000

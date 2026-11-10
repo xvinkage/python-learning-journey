@@ -1,1 +1,22 @@
 $kind: collection
+description: |-
+  # Cafe & Wifi API
+
+  A REST API for discovering and managing cafes with WiFi. This collection covers the full lifecycle of cafe data, including browsing, searching, adding, updating, and removing cafe listings.
+
+  ## Endpoints
+
+  | Method | Endpoint | Description |
+  |--------|----------|-------------|
+  | GET | `/random` | Retrieve a single random cafe from the database |
+  | GET | `/all` | Fetch a list of all cafes |
+  | GET | `/search?loc={location}` | Search for cafes by location name |
+  | POST | `/add` | Add a new cafe with details such as name, location, amenities, and coffee price |
+  | PATCH | `/update-price/{id}` | Update the coffee price for a specific cafe by its ID |
+  | DELETE | `/report-closed/{id}` | Remove a cafe that has permanently closed (requires API key authentication) |
+
+  ## Key Details
+
+  - **Base URL:** `http://127.0.0.1:5000` (local development server)
+  - **Authentication:** The delete endpoint is protected by an API key (`api-key` header).
+  - **Cafe attributes tracked:** name, map URL, image URL, location, sockets, toilets, WiFi, calls allowed, seats, and coffee price.

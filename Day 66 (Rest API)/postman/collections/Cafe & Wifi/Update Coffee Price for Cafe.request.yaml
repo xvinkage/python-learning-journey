@@ -1,0 +1,6 @@
+$kind: http-request
+url: http://127.0.0.1:5000/update-price/1?new_coffee_price=£23.40
+method: PATCH
+queryParams:
+  new_coffee_price: £23.40
+order: 5000

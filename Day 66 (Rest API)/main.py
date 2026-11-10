@@ -107,6 +107,53 @@ def search():
         } for cafe in query_location])
     else:
         return jsonify(error={"Not Found": "Sorry, we don't have a cafe at that location."}), 404
+
+@app.route("/add", methods=["POST"])
+def add_cafe():
+    new_cafe = Cafe(
+        name=request.form.get("name"),
+        map_url=request.form.get("map_url"),
+        img_url=request.form.get("img_url"),
+        location=request.form.get("loc"),
+        has_sockets=bool(request.form.get("sockets")),
+        has_toilet=bool(request.form.get("toilet")),
+        has_wifi=bool(request.form.get("wifi")),
+        can_take_calls=bool(request.form.get("calls")),
+        seats=request.form.get("seats"),
+        coffee_price=request.form.get("coffee_price"),
+    )
+    db.session.add(new_cafe)
+    db.session.commit()
+    return jsonify(response={
+        "success": "Successfully added the new cafe"
+    })
+
+
+@app.route("/update-price/<cafe_id>", methods=["PATCH"])
+def update_price(cafe_id):
+    new_price = request.args.get("new_coffee_price")
+    cafe_to_update = db.session.execute(db.select(Cafe).where(Cafe.id == cafe_id)).scalar()
+    if cafe_to_update is None:
+        return jsonify(error={"Not Found": "Sorry a cafe with that id was not found in the database."}), 404
+    else:
+        cafe_to_update.coffee_price = new_price
+        db.session.commit()
+    return jsonify(response={"success": "Successfully updated the price."}), 200
+
+@app.route("/report-closed/<cafe_id>", methods=["DELETE"])
+def delete_cafe(cafe_id):
+    api_key = request.headers.get("api-key")
+    cafe_to_delete = db.session.execute(db.select(Cafe).where(Cafe.id == cafe_id)).scalar()
+    if api_key == "TopSecretAPIKey":
+        if cafe_to_delete is None:
+            return jsonify(error={"Not Found": "Sorry a cafe with that id was not found in the database."}), 404
+        else:
+            db.session.delete(cafe_to_delete)
+            db.session.commit()
+            return jsonify(response={"success": "Successfully deleted the cafe from the database."}), 200
+    else:
+        return jsonify(error={"error": "Sorry that's not allowed. Make sure you have the correct api-key.."}), 403
+    
 # HTTP GET - Read Record
 
 # HTTP POST - Create Record

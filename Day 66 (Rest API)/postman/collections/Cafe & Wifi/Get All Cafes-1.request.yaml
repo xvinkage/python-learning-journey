@@ -1,4 +1,5 @@
 $kind: http-request
+name: Get All Cafes
 url: http://127.0.0.1:5000/all
 method: GET
 order: 2000

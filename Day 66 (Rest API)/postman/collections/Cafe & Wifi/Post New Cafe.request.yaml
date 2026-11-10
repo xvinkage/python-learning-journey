@@ -1,0 +1,17 @@
+$kind: http-request
+url: http://127.0.0.1:5000/add
+method: POST
+body:
+  type: urlencoded
+  content:
+    name: Cafe Vince
+    map_url: https://maps.app.goo.gl/mE18UW4TKtNmryey5
+    img_url: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGNZkpsOjezsZbG0qxnNeC-FXtSjuVqSSmZAvOeFABpQ&s=10
+    loc: Colorado
+    sockets: "1"
+    toliet: "0"
+    wifi: "1"
+    calls: "0"
+    seats: "10"
+    coffee_price: £2.40
+order: 4000
