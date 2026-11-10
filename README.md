@@ -73,6 +73,9 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 63] Databases with SQLite and SQLAlchemy
 -   [Day 64] My Top 10 Movies Website
 -   [Day 65] Web Design School- How to Create a Website that People will LOVE
+-   [Day 66] Building Your Own API with RESTful Routing
+-   [Day 67] Blog Capstone Project Part 3 - RESTful Routing
+
 
 
 
