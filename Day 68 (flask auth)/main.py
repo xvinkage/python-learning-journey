@@ -45,7 +45,7 @@ def load_user(user_id):
 
 @app.route('/')
 def home():
-    return render_template("index.html")
+    return render_template("index.html", logged_in=current_user.is_authenticated)
 
 
 @app.route('/register', methods=["GET", "POST"])
@@ -71,8 +71,7 @@ def register():
         login_user(register_user)
         return redirect(url_for('secrets', id=register_user.id))
    
-    return render_template("register.html")
-
+    return render_template("register.html", logged_in=current_user.is_authenticated)
 
 @app.route('/login', methods=["GET", "POST"],)
 def login():
@@ -85,15 +84,12 @@ def login():
         else:
             flash("Invalid email or password. Please try again.")
             return redirect(url_for("login"))
-    return render_template("login.html")
+    return render_template("login.html", logged_in=current_user.is_authenticated)
 
-
-@app.route('/secrets/<int:id>', methods=["GET"])
+@app.route('/secrets', methods=["GET"])
 @login_required
-def secrets(id):
-    user = db.get_or_404(User, id)
-    return render_template("secrets.html", name=user.name )
-
+def secrets():
+    return render_template("secrets.html", name=current_user.name, logged_in=True)
 
 @app.route('/logout')
 def logout():
