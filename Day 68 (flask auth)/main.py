@@ -50,10 +50,19 @@ def home():
 
 @app.route('/register', methods=["GET", "POST"])
 def register():
+    
     if request.method == "POST":
+        email = request.form.get('email')
+        result = db.session.execute(db.select(User).where(User.email == email))
+        # Note, email in db is unique so will only have one result.
+        user = result.scalar()           
+        if user:
+            flash("You've already signed up with that email. Login instead..")
+            return redirect(url_for("login"))
+
         hash = generate_password_hash(request.form.get('password'), 'pbkdf2:sha256', 8)
         register_user = User(
-            email=request.form.get('email'),
+            email=email,
             password=hash,
             name=request.form.get('name')
         )
@@ -61,6 +70,7 @@ def register():
         db.session.commit()
         login_user(register_user)
         return redirect(url_for('secrets', id=register_user.id))
+   
     return render_template("register.html")
 
 
