@@ -2,7 +2,7 @@
 
 ## 📚 Today's Concepts
 - Authentication
-- Concept 2
+- encryption
 - Concept 3
 - Concept 4
 
@@ -19,8 +19,18 @@
 - Why auth?
     - users will generate data and account is needed to associate data with user
     - restrict access
-- 
-- New Python function or concept
+-  encryption
+    - secure with a key
+- hashing
+    - takes away need for encryption key
+    -  turn password into hash and we store the hash
+    - hash is a mathematical equation almost impossible to reverse
+    - when logging in it is hashed and compared to hash in db
+    - bcrypt most secure
+- salting
+    - in addition to hash random set of charcters "salt + pass and  then hash. save salt in db with hash
+
+ New Python function or concept
 - Common mistake I discovered
 - Better way to solve a problem
 
