@@ -56,6 +56,7 @@ class BlogPost(db.Model):
 
 # TODO: Create a User table for all your registered users. 
 class User(db.Model):
+    __tablename__ = "user"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     email: Mapped[str] = mapped_column(String(250), unique=True, nullable=False)
     password: Mapped[str] = mapped_column(String(250), nullable=False)
@@ -70,24 +71,25 @@ with app.app_context():
 @app.route('/register', methods=["POST", "GET"])
 def register():
     form = RegisterForm()
-    if request.method == "POST":
-        email = request.form.get('email')
+    if request.method == "POST" and form.validate_on_submit():
+        email = form.email.data
         result = db.session.execute(db.select(User).where(User.email == email))
         # Note, email in db is unique so will only have one result.
         user = result.scalar()           
         if user:
             flash("You've already signed up with that email. Login instead..")
             return redirect(url_for("login"))
-        hash = generate_password_hash(request.form.get('password'), 'pbkdf2:sha256', 8)
+        hash = generate_password_hash(form.password.data, 'pbkdf2:sha256', 8)
         register_user = User(
             email=email,
             password=hash,
-            name=request.form.get('name')
+            name=form.name.data
         )
         db.session.add(register_user)
         db.session.commit()
-        login_user(register_user)
-    
+        # login_user(register_user)
+        return redirect(url_for("get_all_posts"))
+
     return render_template("register.html", form=form)
 
 
