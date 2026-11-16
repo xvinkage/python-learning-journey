@@ -76,6 +76,7 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 66] Building Your Own API with RESTful Routing
 -   [Day 67] Blog Capstone Project Part 3 - RESTful Routing
 -   [Day 68] Authentication with Flask
+-   [Day 69] Blog Capstone Project Part 4 - Adding Users
 
 
 
