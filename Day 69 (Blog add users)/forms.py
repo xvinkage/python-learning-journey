@@ -19,7 +19,7 @@ class RegisterForm(FlaskForm):
     email = EmailField("Email", validators=[DataRequired()])
     password = PasswordField("Password", validators=[DataRequired()])
     name = StringField("Name", validators=[DataRequired()])
-
+    submit = SubmitField("Sign Up!")
 
 # TODO: Create a LoginForm to login existing users
 
