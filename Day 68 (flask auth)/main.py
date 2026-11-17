@@ -92,6 +92,7 @@ def secrets():
     return render_template("secrets.html", name=current_user.name, logged_in=True)
 
 @app.route('/logout')
+@login_required
 def logout():
     logout_user()
     return redirect(url_for('home'))
