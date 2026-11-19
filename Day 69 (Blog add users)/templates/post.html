@@ -50,8 +50,9 @@
 
             <li>
               <div class="commenterImage">
-                <img src="../static/assets/img/default-profile.jpg" />
-              </div>
+        <img
+                  src="{{ comment.comment_author.email | gravatar }}"
+                />              </div>
               <div class="commentText">
                 {{comment.text | safe}}
                 <p></p>
