@@ -10,7 +10,7 @@ from sqlalchemy import Integer, String, Text, ForeignKey
 from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
 # Import your forms from the forms.py
-from forms import CreatePostForm, RegisterForm, LoginForm
+from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 from typing import List
 
 
@@ -63,8 +63,8 @@ class User(UserMixin, db.Model):
     email: Mapped[str] = mapped_column(String(250), unique=True, nullable=False)
     password: Mapped[str] = mapped_column(String(250), nullable=False)
     name: Mapped[str] = mapped_column(String(250), nullable=False)
-    posts: Mapped[List["BlogPost"]] = relationship(back_populates="author")
-
+    posts = relationship("BlogPost", back_populates="author")
+    comments = relationship("Comment", back_populates="comment_author")
 
 # CONFIGURE TABLES
 class BlogPost(db.Model):
@@ -77,7 +77,16 @@ class BlogPost(db.Model):
     author: Mapped["User"] = relationship(back_populates="posts")
     img_url: Mapped[str] = mapped_column(String(250), nullable=False)
     author_id: Mapped[int] = mapped_column(ForeignKey("user.id"))
-
+    comments = relationship("Comment", back_populates="parent_post")
+    
+class Comment(db.Model):
+    __tablename__ = "comments"
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    text: Mapped[str] = mapped_column(Text, nullable=False)
+    author_id: Mapped[int] = mapped_column(ForeignKey("user.id"))
+    comment_author: Mapped["User"] = relationship(back_populates="comments")
+    post_id: Mapped[int] = mapped_column(ForeignKey("blog_posts.id"))
+    parent_post = relationship("BlogPost", back_populates="comments")
 
 
 with app.app_context():
@@ -135,17 +144,32 @@ def logout():
 
 @app.route('/')
 def get_all_posts():
+    print("HOMEPAGE ROUTE REACHED")
     result = db.session.execute(db.select(BlogPost))
     posts = result.scalars().all()
     return render_template("index.html", all_posts=posts, logged_in=current_user.is_authenticated)
 
 
 # TODO: Allow logged-in users to comment on posts
-@app.route("/post/<int:post_id>")
+@app.route("/post/<int:post_id>", methods=["GET", "POST"])
 @login_required
 def show_post(post_id):
+    form = CommentForm()
     requested_post = db.get_or_404(BlogPost, post_id)
-    return render_template("post.html", post=requested_post, logged_in=True)
+
+    if form.validate_on_submit():
+        if not current_user.is_authenticated:    
+            flash("You need to login or register to comment.")
+            return redirect(url_for("login"))
+        
+        comment = Comment(
+            text = form.comment.data,
+            comment_author = current_user,
+            parent_post = requested_post.id
+        )
+        db.session.add(comment)
+        db.session.commit()
+    return render_template("post.html", post=requested_post, logged_in=True, form=form)
 
 
 # TODO: Use a decorator so only an admin user can create a new post
