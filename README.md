@@ -79,6 +79,8 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 69] Blog Capstone Project Part 4 - Adding Users
 -   [Day 70] Git, Github, and Version Control
 -   [Day 71] Deploying Your Web Application
+-   [Day 72] Data Exploration with Pandas
+
 
 
 
