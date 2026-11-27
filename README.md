@@ -81,15 +81,8 @@ I am learning python by working through the Udemy course [100 Days of Code: The 
 -   [Day 71] Deploying Your Web Application
 -   [Day 72] Data Exploration with Pandas: College Major vs Salary
 -   [Day 73] Data Visualization with Matplotlib: Programming Languages
-
-
-
-
-
-
-
-
-
+-   [Day 74] Aggregate and Merge Data with Pandas
+-   [Day 75] Resampling and Visualizing Time Series
 
 
 
